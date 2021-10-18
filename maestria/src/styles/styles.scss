@@ -1,0 +1,80 @@
+@import './settings';
+
+body {
+    background-color: $background;
+    margin: 0; 
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    margin-top: 50px;
+    
+    img {
+        width: 150px;
+    }
+
+    h3 {
+        text-transform: uppercase;
+        font-size: 2rem;
+        margin-top: 40px;
+        font-weight: 500;
+    }
+}
+
+#intro {
+    text-align: center;
+    position: relative;
+    height: 70vh;
+
+    .intro_text {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        h1 {
+            font-size: 5rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+    }
+
+    img {
+        opacity: 0.5;
+        position: absolute;
+        width: 25vw;
+        left: 0;
+    }
+
+    .intro_footer {
+        text-transform: uppercase;
+        position: absolute;
+        bottom: 30px;
+        font-weight: 700;
+        width: 100%;
+    }
+}
+
+#histoire {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    h2 {
+        max-width: 610px;
+        font-weight: 500;
+        font-size: 3rem;
+        position: relative;
+        top: -50px;
+
+        &::before {
+            content: "“";
+            display: block;
+            font-size: 500px;
+            position: absolute;
+            top: 0;
+            opacity: 0.5;
+        }
+    }
+}

@@ -1,0 +1,100 @@
+@charset "UTF-8";
+h1, h2, h3, p, span {
+  color: #EBBF65;
+  -webkit-margin-before: 0em;
+          margin-block-start: 0em;
+  -webkit-margin-after: 0em;
+          margin-block-end: 0em;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+body {
+  background-color: #191919;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  text-align: center;
+  margin-top: 50px;
+}
+
+header img {
+  width: 150px;
+}
+
+header h3 {
+  text-transform: uppercase;
+  font-size: 2rem;
+  margin-top: 40px;
+  font-weight: 500;
+}
+
+#intro {
+  text-align: center;
+  position: relative;
+  height: 70vh;
+}
+
+#intro .intro_text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#intro .intro_text h1 {
+  font-size: 5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+#intro img {
+  opacity: 0.5;
+  position: absolute;
+  width: 25vw;
+  left: 0;
+}
+
+#intro .intro_footer {
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 30px;
+  font-weight: 700;
+  width: 100%;
+}
+
+#histoire {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+}
+
+#histoire h2 {
+  max-width: 610px;
+  font-weight: 500;
+  font-size: 3rem;
+  position: relative;
+  top: -50px;
+}
+
+#histoire h2::before {
+  content: "“";
+  display: block;
+  font-size: 500px;
+  position: absolute;
+  top: 0;
+  opacity: 0.5;
+}
+/*# sourceMappingURL=styles.css.map */
