@@ -14,7 +14,7 @@ const App = () => {
             <h1>Maestria</h1>
             <p>Nom féminin : Aisance, perfection dans l'exécution d'une œuvre d'art, dans la réalisation de quelque chose ; brio, virtuosité.</p>
           </div>
-          <img src="./images/p1.webp" alt="" />
+          <img src="./images/p1.jpg" alt="" />
           <div>
             <h3 className="intro_footer">Découvrir l’histoire</h3>
             <img className="intro_union" src="./images/union.png" alt=""/>
