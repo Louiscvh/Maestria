@@ -1,36 +1,43 @@
-// Variables
-$jaune : #EBBF65;
-$spotify: #13863C;
+/* Variables */
+$jaune : #ebbf65;
+$spotify: #13863c;
 $background: #191919;
 
-h1, h2, h3, p, span {
-    color: $jaune;
-    margin-block-start: 0em;
-    margin-block-end: 0em;
+h1,
+h2,
+h3,
+p,
+span {
+  color: $jaune;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 .container {
-    width: 80%;
-    margin: 0 auto;
+  width: 80%;
+  margin: 0 auto;
 }
 
 p {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
-#story h2, #work h2, #years h2 {
-    max-width: 410px;
-    font-weight: 500;
-    font-size: 3rem;
-    position: relative;
-    &::before {
-        content: "“";
-        display: block;
-        font-size: 500px;
-        position: absolute;
-        top: 0;
-        transform: translateY(-30%);
-        opacity: 0.5;
-        font-weight: 400;
-    }
+#story h2,
+#work h2,
+#years h2 {
+  max-width: 410px;
+  font-weight: 500;
+  font-size: 3rem;
+  position: relative;
+
+  &::before {
+    content: "“";
+    display: block;
+    font-size: 500px;
+    position: absolute;
+    top: 0;
+    transform: translateY(-30%);
+    opacity: 50%;
+    font-weight: 400;
+  }
 }

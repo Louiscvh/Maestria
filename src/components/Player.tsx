@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { useState } from 'react'
 
 const Player = () => {
@@ -24,7 +24,7 @@ const Player = () => {
                         </button>
                     </div>
                 </div>
-                <iframe title="Music Player" src={link} width="50%" height="500px" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                <iframe title="Music Player" src={link} height="500px" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
             </div>
         </section>
     );

@@ -1,10 +1,15 @@
 @charset "UTF-8";
-h1, h2, h3, p, span {
-  color: #EBBF65;
-  -webkit-margin-before: 0em;
-          margin-block-start: 0em;
-  -webkit-margin-after: 0em;
-          margin-block-end: 0em;
+/* Variables */
+h1,
+h2,
+h3,
+p,
+span {
+  color: #ebbf65;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
 }
 
 .container {
@@ -16,14 +21,18 @@ p {
   font-size: 1.2rem;
 }
 
-#story h2, #work h2, #years h2 {
+#story h2,
+#work h2,
+#years h2 {
   max-width: 410px;
   font-weight: 500;
   font-size: 3rem;
   position: relative;
 }
 
-#story h2::before, #work h2::before, #years h2::before {
+#story h2::before,
+#work h2::before,
+#years h2::before {
   content: "“";
   display: block;
   font-size: 500px;
@@ -31,7 +40,7 @@ p {
   top: 0;
   -webkit-transform: translateY(-30%);
           transform: translateY(-30%);
-  opacity: 0.5;
+  opacity: 50%;
   font-weight: 400;
 }
 
@@ -53,7 +62,7 @@ header img {
 header h3 {
   text-transform: uppercase;
   font-size: 2rem;
-  margin: 40px 0px;
+  margin: 40px 0;
   font-weight: 500;
 }
 
@@ -96,7 +105,7 @@ header h3 {
 }
 
 #intro img {
-  opacity: 0.5;
+  opacity: 50%;
   position: absolute;
   left: 0;
   width: 400px;
@@ -192,8 +201,8 @@ header h3 {
 }
 
 #player {
-  width: 80%;
-  margin: 100px auto 0px auto;
+  width: 100%;
+  margin: 100px auto 0;
 }
 
 #player .player_content {
@@ -202,8 +211,26 @@ header h3 {
   display: flex;
 }
 
+@media screen and (max-width: 950px) {
+  #player .player_content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 #player .player_content iframe {
   margin-left: 130px;
+  width: 50%;
+}
+
+@media screen and (max-width: 950px) {
+  #player .player_content iframe {
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 30px;
+  }
 }
 
 #player h2 {
@@ -226,12 +253,19 @@ header h3 {
   width: 100%;
 }
 
+#player div .player_btn {
+  display: -ms-grid;
+  display: grid;
+  gap: 20px 20px;
+  -ms-grid-columns: (140px)[auto-fill];
+      grid-template-columns: repeat(auto-fill, 140px);
+}
+
 #player div .player_btn button {
   cursor: pointer;
   border: none;
   background-color: black;
   padding: 18px;
-  margin-right: 7.5px;
 }
 
 #player div .player_btn button img {
@@ -239,7 +273,7 @@ header h3 {
 }
 
 #player div .player_btn button:nth-child(1) {
-  background-color: #13863C;
+  background-color: #13863c;
 }
 
 #shop {
@@ -256,7 +290,7 @@ header h3 {
           justify-content: center;
   width: 300px;
   height: 70px;
-  background-color: #EBBF65;
+  background-color: #ebbf65;
 }
 
 #shop .shop_btn {
