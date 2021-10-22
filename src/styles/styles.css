@@ -12,6 +12,29 @@ h1, h2, h3, p, span {
   margin: 0 auto;
 }
 
+p {
+  font-size: 1.2rem;
+}
+
+#story h2, #work h2, #years h2 {
+  max-width: 410px;
+  font-weight: 500;
+  font-size: 3rem;
+  position: relative;
+}
+
+#story h2::before, #work h2::before, #years h2::before {
+  content: "“";
+  display: block;
+  font-size: 500px;
+  position: absolute;
+  top: 0;
+  -webkit-transform: translateY(-30%);
+          transform: translateY(-30%);
+  opacity: 0.5;
+  font-weight: 400;
+}
+
 body {
   background-color: #191919;
   margin: 0;
@@ -30,7 +53,7 @@ header img {
 header h3 {
   text-transform: uppercase;
   font-size: 2rem;
-  margin-top: 40px;
+  margin: 40px 0px;
   font-weight: 500;
 }
 
@@ -40,12 +63,30 @@ header h3 {
   height: 70vh;
 }
 
+@media screen and (max-width: 950px) {
+  #intro {
+    margin-bottom: 200px;
+    height: auto;
+  }
+}
+
 #intro .intro_text {
   position: absolute;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 950px) {
+  #intro .intro_text {
+    position: relative;
+    left: 0;
+    top: 0;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    margin-bottom: 50px;
+  }
 }
 
 #intro .intro_text h1 {
@@ -57,19 +98,34 @@ header h3 {
 #intro img {
   opacity: 0.5;
   position: absolute;
-  width: 25vw;
   left: 0;
+  width: 400px;
+}
+
+@media screen and (max-width: 950px) {
+  #intro img {
+    position: relative;
+  }
 }
 
 #intro .intro_footer {
   text-transform: uppercase;
   position: absolute;
-  bottom: 30px;
+  bottom: -80px;
   font-weight: 700;
   width: 100%;
 }
 
-#histoire {
+#intro .intro_union {
+  width: 14px;
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 20px);
+          transform: translate(-50%, 20px);
+}
+
+#story {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -81,20 +137,144 @@ header h3 {
           align-items: end;
 }
 
-#histoire h2 {
-  max-width: 610px;
-  font-weight: 500;
-  font-size: 3rem;
-  position: relative;
+#story h2 {
   top: -50px;
 }
 
-#histoire h2::before {
-  content: "“";
-  display: block;
-  font-size: 500px;
-  position: absolute;
-  top: 0;
-  opacity: 0.5;
+#work {
+  margin-top: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#work h2 {
+  text-align: right;
+}
+
+#work .work_images {
+  position: relative;
+}
+
+#work .work_images img {
+  position: relative;
+}
+
+#work .work_images img:nth-child(2) {
+  top: -200px;
+  left: 100px;
+}
+
+#years {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#years .years_images {
+  position: relative;
+  width: 50%;
+}
+
+#years .years_images img {
+  position: relative;
+}
+
+#years .years_images img:nth-child(2) {
+  top: -150px;
+  left: -200px;
+}
+
+#player {
+  width: 80%;
+  margin: 100px auto 0px auto;
+}
+
+#player .player_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#player .player_content iframe {
+  margin-left: 130px;
+}
+
+#player h2 {
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+#player p {
+  margin-bottom: 30px;
+}
+
+#player div p {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+#player div .player_cover {
+  width: 100%;
+}
+
+#player div .player_btn button {
+  cursor: pointer;
+  border: none;
+  background-color: black;
+  padding: 18px;
+  margin-right: 7.5px;
+}
+
+#player div .player_btn button img {
+  height: 20px;
+}
+
+#player div .player_btn button:nth-child(1) {
+  background-color: #13863C;
+}
+
+#shop {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 50px auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 300px;
+  height: 70px;
+  background-color: #EBBF65;
+}
+
+#shop .shop_btn {
+  border: none;
+  text-transform: uppercase;
+  color: black;
+  text-decoration: none;
+}
+
+footer {
+  text-align: center;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+}
+
+@media (min-width: 1000px) {
+  #intro {
+    margin-bottom: 150px;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
