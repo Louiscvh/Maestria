@@ -58,7 +58,8 @@ header {
     z-index: 1;
     position: absolute;
     left: 0;
-    width: 400px;
+    width: auto;
+    height: 100%;
 
     @include media-max(950px) {
       position: relative;
@@ -76,6 +77,7 @@ header {
 
   .intro_union {
     width: 14px;
+    height: 14px;
     position: absolute;
     bottom: -80px;
     left: 50%;

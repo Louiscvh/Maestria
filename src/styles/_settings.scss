@@ -1,3 +1,5 @@
+@import "./mixins";
+
 /* Variables */
 $jaune : #ebbf65;
 $spotify: #13863c;
@@ -36,10 +38,13 @@ p {
 #story h2,
 #work h2,
 #years h2 {
-  max-width: 410px;
   font-weight: 500;
   font-size: 3rem;
   position: relative;
+  margin-right: 30px;
+  @include media-max(950px) {
+    margin-right: 0;
+  }
 
   &::before {
     content: "“";
@@ -48,7 +53,7 @@ p {
     position: absolute;
     top: 0;
     transform: translateY(-35%);
-    opacity: 0.5;
+    opacity: 0.5%;
     font-weight: 400;
   }
 }
