@@ -2,8 +2,6 @@
 @import "./mixins";
 @import "./fonts";
 
-
-
 header {
   text-align: center;
   margin-top: 50px;
@@ -14,7 +12,7 @@ header {
 
   h3 {
     text-transform: uppercase;
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: 40px 0;
     font-weight: 500;
   }
@@ -50,6 +48,9 @@ header {
       font-weight: 500;
       text-transform: uppercase;
       text-align: center;
+      @include media-max(950px) {
+        font-size: 3rem;
+      }
     }
   }
 
