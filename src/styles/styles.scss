@@ -1,10 +1,13 @@
 @import "./settings";
 @import "./mixins";
+@import "./fonts";
 
 body {
   background-color: $background;
   margin: 0;
   padding: 0;
+  font-family: "Cirka";
+  overflow-x: hidden;
 }
 
 header {
@@ -38,6 +41,7 @@ header {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    z-index: 2;
 
     @include media-max(950px) {
       position: relative;
@@ -55,12 +59,14 @@ header {
   }
 
   img {
+    z-index: 1;
     position: absolute;
     left: 0;
     width: 400px;
 
     @include media-max(950px) {
       position: relative;
+      width: 100%;
     }
   }
 
@@ -85,9 +91,16 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: end;
+  @include media-max(950px) {
+    flex-direction: column;
+    padding-top: 100px;
+  }
 
   h2 {
     top: -50px;
+    @include media-max(950px) {
+      text-align: justify;
+    }
   }
 }
 
@@ -95,9 +108,16 @@ header {
   margin-top: 200px;
   display: flex;
   justify-content: space-between;
+  @include media-max(950px) {
+    flex-direction: column;
+    margin-bottom: 200px;
+  }
 
   h2 {
     text-align: right;
+    @include media-max(950px) {
+      text-align: justify;
+    }
   }
 
   .work_images {
@@ -117,6 +137,16 @@ header {
 #years {
   display: flex;
   justify-content: space-between;
+  @include media-max(950px) {
+    flex-direction: column;
+  }
+
+  h2 {
+    @include media-max(950px) {
+      text-align: justify;
+      margin-bottom: 80px;
+    }
+  }
 
   .years_images {
     position: relative;
