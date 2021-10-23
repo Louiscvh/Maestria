@@ -47,8 +47,7 @@ const App = () => {
         <section id="years">
           <div>
             <h2>
-              ...leur travail leur fit développer une maîtrise de leur art, la
-              Maestria.
+              Maestria est la consécration d’une longue histoire et de nombreuses années de travail.
             </h2>
           </div>
           <div className="years_images">

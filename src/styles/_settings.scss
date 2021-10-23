@@ -3,6 +3,17 @@ $jaune : #ebbf65;
 $spotify: #13863c;
 $background: #191919;
 
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: $background;
+  margin: 0;
+  padding: 0;
+  font-family: "Cirka";
+}
+
 h1,
 h2,
 h3,
