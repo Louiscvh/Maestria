@@ -16,35 +16,26 @@ const Player = () => {
           <p>Ecouter sur :</p>
           <div className="player_btn">
             <button
-              onClick={() =>
-                setLink(
-                  "https://open.spotify.com/embed/album/29FRXjKDesQsuSMnailZI1?utm_source=generator"
-                )
-              }
+              
             >
-              <img src="./images/spotify.png" alt="" />
+              <img src="./images/spotify.webp" alt="" />
             </button>
             <button
-              onClick={() =>
-                setLink(
-                  "https://embed.music.apple.com/fr/album/d%C3%A9brouillard-ep/1530555106"
-                )
-              }
+              
             >
-              <img src="./images/applemusic.png" alt="" />
+              <img src="./images/applemusic.webp" alt="" />
             </button>
             <button
-              onClick={() =>
-                setLink("https://widget.deezer.com/widget/dark/album/171925172")
-              }
+            
             >
-              <img src="./images/deezer.png" alt="" />
+              <img src="./images/deezer.webp" alt="" />
             </button>
+            <div className="eclipse"></div>
           </div>
         </div>
         <iframe
           title="Music Player"
-          src={link}
+          src="https://open.spotify.com/embed/album/29FRXjKDesQsuSMnailZI1?utm_source=generator"
           height="500px"
           frameBorder="0"
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"

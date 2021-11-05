@@ -1,19 +1,31 @@
 @import "./mixins";
 
 /* Variables */
-$jaune : #ebbf65;
+$jaune: #ebbf65;
 $spotify: #13863c;
 $background: #191919;
 
-html, body {
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+html,
+body {
   overflow-x: hidden;
+  cursor: none;
 }
 
 body {
   background-color: $background;
+  background-image: url(../../src/images/blur.webp);
+  background-size: cover;
   margin: 0;
   padding: 0;
   font-family: "Cirka";
+  z-index: -5;
+  opacity: 0;
+  will-change: opacity;
 }
 
 h1,
@@ -35,9 +47,31 @@ p {
   font-size: 1.2rem;
 }
 
+img[data-spawn] {
+  will-change: clip-path;
+  clip-path: inset(0% 0% 100% 0%);
+  transition: clip-path 1s cubic-bezier(0.73, 0.01, 0, 1);
+  &.reveal {
+    clip-path: inset(0% 0% 0% 0%);
+  }
+}
+
+.eclipse {
+  height: 380px;
+  width: 380px;
+  background-color: $jaune;
+  filter: blur(300px);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -5;
+}
+
 #story h2,
 #work h2,
 #years h2 {
+  max-width: 700px;
   font-weight: 500;
   font-size: 3rem;
   position: relative;
@@ -53,7 +87,31 @@ p {
     position: absolute;
     top: 0;
     transform: translateY(-35%);
-    opacity: 0.5%;
+    opacity: 0.5;
     font-weight: 400;
   }
+}
+
+.cursor {
+  div {
+    width: 30px;
+    height: 30px;
+    background-color: $jaune;
+    position: absolute;
+    z-index: 10000;
+    pointer-events: none;
+    transform: translate3d(0, 0, 0);
+    left: -10px;
+    top: -10px;
+    will-change: transform;
+    border-radius: 100%;
+    transition: filter cubic-bezier(0.73, 0.01, 0, 1) 0.5s;
+    filter: blur(20px);
+    border: 1px solid $jaune;
+  }
+}
+
+.appear {
+  opacity: 1;
+  transition: opacity 1s cubic-bezier(0.73, 0.01, 0, 1);
 }

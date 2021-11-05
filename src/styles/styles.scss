@@ -1,6 +1,7 @@
 @import "./settings";
 @import "./mixins";
 @import "./fonts";
+@import "./anim";
 
 header {
   text-align: center;
@@ -8,6 +9,7 @@ header {
 
   img {
     width: 150px;
+    opacity: 0;
   }
 
   h3 {
@@ -15,6 +17,8 @@ header {
     font-size: 1.5rem;
     margin: 40px 0;
     font-weight: 500;
+    letter-spacing: 0.4em;
+    opacity: 0;
   }
 }
 
@@ -44,13 +48,25 @@ header {
     }
 
     h1 {
-      font-size: 5rem;
+      font-size: 8rem;
       font-weight: 500;
       text-transform: uppercase;
       text-align: center;
+      overflow: hidden;
       @include media-max(950px) {
         font-size: 3rem;
       }
+
+      span {
+        transition: transform cubic-bezier(0.73, 0.01, 0, 1) 1.2s;
+        display: inline-block;
+        transform: translateY(150px);
+        will-change: transform;
+      }
+    }
+    p {
+      opacity: 0;
+      transition: opacity cubic-bezier(0.73, 0.01, 0, 1) 1.2s;
     }
   }
 
@@ -60,6 +76,7 @@ header {
     left: 0;
     width: auto;
     height: 100%;
+    opacity: 0.5;
 
     @include media-max(950px) {
       position: relative;
@@ -77,7 +94,7 @@ header {
 
   .intro_union {
     width: 14px;
-    height: 14px;
+    height: 12px;
     position: absolute;
     bottom: -80px;
     left: 50%;
@@ -94,6 +111,13 @@ header {
     padding-top: 100px;
   }
 
+  img {
+    width: 40%;
+    @include media-max(950px) {
+      width: 100%;
+    }
+  }
+
   h2 {
     top: -50px;
     @include media-max(950px) {
@@ -107,6 +131,7 @@ header {
   margin-top: 200px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   @include media-max(950px) {
     flex-direction: column;
     margin-bottom: 200px;
@@ -114,20 +139,42 @@ header {
 
   h2 {
     text-align: right;
+    z-index: 1;
     @include media-max(950px) {
       text-align: justify;
+    }
+
+    &::before {
+      transform: rotate(180deg) translateY(55%);
+      right: 0;
     }
   }
 
   .work_images {
     position: relative;
+    width: 100%;
+
+    picture::after {
+      content: "Séance Studio";
+      display: block;
+      position: relative;
+      color: #b1aba0;
+      top: 0;
+      z-index: 2;
+      font-size: 1.2rem;
+      margin-top: 15px;
+    }
 
     img {
       position: relative;
+      z-index: 1;
+
+      &:nth-child(1) {
+        opacity: 0.5;
+      }
 
       &:nth-child(2) {
-        top: -200px;
-        left: 100px;
+        transform: translate(30%, -30%);
       }
     }
   }
@@ -142,21 +189,30 @@ header {
   }
 
   h2 {
+    transform: translateY(200px);
     @include media-max(950px) {
       text-align: justify;
+      transform: translateY(0px);
     }
   }
 
   .years_images {
     position: relative;
     width: 50%;
+    @include media-max(950px) {
+      width: 100%;
+    }
 
     img {
       position: relative;
+      float: right;
+
+      &:nth-child(1) {
+        opacity: 0.5;
+      }
 
       &:nth-child(2) {
-        top: -150px;
-        left: -200px;
+        transform: translate(-50%, -30%);
       }
     }
   }
@@ -164,22 +220,23 @@ header {
 
 #player {
   width: 100%;
-  margin: 100px auto 0;
+  margin: 100px auto;
 
   .player_content {
     display: flex;
     @include media-max(950px) {
-        flex-direction: column;
+      flex-direction: column;
     }
 
     iframe {
+      position: relative;
       margin-left: 130px;
       width: 50%;
       @include media-max(950px) {
         width: 100%;
         margin-left: 0px;
         margin-top: 30px;
-    }
+      }
     }
   }
 
@@ -205,23 +262,24 @@ header {
     }
 
     .player_btn {
-        display: grid;
-        gap: 20px 20px;
-        grid-template-columns: repeat(auto-fill, 140px);
-        button {
-            cursor: pointer;
-            border: none;
-            background-color: black;
-            padding: 18px;
+      position: relative;
+      display: grid;
+      gap: 20px 20px;
+      grid-template-columns: repeat(auto-fill, 140px);
+      button {
+        cursor: pointer;
+        border: none;
+        background-color: black;
+        padding: 18px;
 
-            img {
-                height: 20px;
-            }
-
-            &:nth-child(1) {
-            background-color: $spotify;
-            }
+        img {
+          height: 20px;
         }
+
+        &:nth-child(1) {
+          background-color: $spotify;
+        }
+      }
     }
   }
 }
@@ -229,18 +287,25 @@ header {
 #shop {
   width: 100%;
   display: flex;
-  margin: 50px auto;
   align-items: center;
   justify-content: center;
-  width: 300px;
-  height: 70px;
-  background-color: $jaune;
 
   .shop_btn {
-    border: none;
     text-transform: uppercase;
     color: black;
+    width: 300px;
+    height: 70px;
+    margin: 0px auto 50px auto;
+    background-color: $jaune;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
+
+    span {
+      color: black;
+    }
   }
 }
 
