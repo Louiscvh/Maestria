@@ -19,6 +19,10 @@ body {
 body {
   background-color: $background;
   background-image: url(../../src/images/blur.webp);
+  @include media-max(950px) {
+    background-image: none;
+  }
+
   background-size: cover;
   margin: 0;
   padding: 0;
