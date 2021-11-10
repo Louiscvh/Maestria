@@ -1,13 +1,15 @@
-import Player from "./components/Player"
+import Player from "./components/Player.js"
 import { useEffect } from 'react'
 
 const App = () => {
 
   useEffect(() => {
-    const images = document.querySelectorAll('img[data-spawn], picture');
+
+    const images = document.querySelectorAll('img[data-spawn]');
+    const texts = document.querySelectorAll('h2[data-spawn]');
     const io = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.intersectionRatio > 0 ) {
+        if (entry.isIntersecting ) {
           entry.target.classList.add('reveal')
         }
       })
@@ -16,11 +18,15 @@ const App = () => {
     images.forEach((el) => {
       io.observe(el)
       el.addEventListener('mouseenter', () => {
-        document.querySelector('.cursor div').style.filter = 'blur(0px)'
+        document.querySelector('.cursor div').style.filter = 'blur(5px)'
       })
       el.addEventListener('mouseleave', () => {
         document.querySelector('.cursor div').style.filter = 'blur(20px)'
       })
+    })
+
+    texts.forEach((el) => {
+      io.observe(el)
     })
 
     window.addEventListener('load',() => {
@@ -75,7 +81,7 @@ const App = () => {
         </section>
         <section id="story">
           <div>
-            <h2>
+            <h2 data-spawn>
               Les Djé, c’est l’histoire de deux frères, deux frères déterminés
               dans leur passion...
             </h2>
@@ -85,13 +91,13 @@ const App = () => {
         <section id="work">
           <div className="work_images">
             <picture>
-              <img src="./images/p3.webp" alt=""/>
+              <img src="./images/p3.webp" data-spawn alt=""/>
             </picture>
             <img src="./images/p4.webp" data-spawn alt="" />
             <div className="eclipse"></div>
           </div>
           <div>
-            <h2>
+            <h2 data-spawn>
               ...leur travail leur fit développer une maîtrise de leur art, la
               Maestria.
             </h2>
@@ -99,7 +105,7 @@ const App = () => {
         </section>
         <section id="years">
           <div>
-            <h2>
+            <h2 data-spawn>
               Maestria est la consécration d’une longue histoire et de
               nombreuses années de travail.
             </h2>
@@ -111,15 +117,15 @@ const App = () => {
           </div>
         </section>
         <iframe
+          className="clip"
           title="Video clip"
           width="100%"
-          height="500px"
           src="https://www.youtube.com/embed/Vqf4dPoohJA"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>
-        <Player />
+        <Player/>
         <section id="shop">
           <a className="shop_btn" href="https://www.google.fr">
             <span>Visiter la boutique</span>

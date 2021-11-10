@@ -193,6 +193,7 @@ header {
     @include media-max(950px) {
       text-align: justify;
       transform: translateY(0px);
+      margin-top: 100px;
     }
   }
 
@@ -206,6 +207,10 @@ header {
     img {
       position: relative;
       float: right;
+      @include media-max(950px) {
+        float: none;
+        width: 100%;
+      }
 
       &:nth-child(1) {
         opacity: 0.5;
@@ -213,9 +218,17 @@ header {
 
       &:nth-child(2) {
         transform: translate(-50%, -30%);
+        @include media-max(950px) {
+          transform: translate(0%, 0%);
+          margin-top: 100px;
+        }
       }
     }
   }
+}
+
+.clip {
+  aspect-ratio: 16/9;
 }
 
 #player {
@@ -266,11 +279,12 @@ header {
       display: grid;
       gap: 20px 20px;
       grid-template-columns: repeat(auto-fill, 140px);
-      button {
-        cursor: pointer;
+      a {
         border: none;
         background-color: black;
         padding: 18px;
+        display: flex;
+        justify-content: center;
 
         img {
           height: 20px;

@@ -47,7 +47,9 @@ p {
   font-size: 1.2rem;
 }
 
-img[data-spawn] {
+img[data-spawn],
+h2[data-spawn],
+p[data-spawn] {
   will-change: clip-path;
   clip-path: inset(0% 0% 100% 0%);
   transition: clip-path 1s cubic-bezier(0.73, 0.01, 0, 1);
